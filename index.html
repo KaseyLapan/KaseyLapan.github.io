@@ -142,28 +142,21 @@
         arWorldRoot.add( sphere );
 	
 	
-	var loader = new THREE.STLLoader();
-	// Binary files
 	var material = new THREE.MeshPhongMaterial( { color: 0xAAAAAA, specular: 0x111111, shininess: 200 } );
-	// Colored binary STL
-	console.log("kasey");
-	loader.load( './kaseyScan.stl', function ( geometry ) {
-	var meshMaterial = material;
-	if (geometry.hasColors) {
-	   meshMaterial = new THREE.MeshPhongMaterial({ opacity: geometry.alpha, vertexColors: THREE.VertexColors });
-	}
-		
-		
-	var mesh2 = new THREE.Mesh( geometry, meshMaterial );
-	mesh2.position.set( 0.5, -0.5, 0 );
-	mesh2.rotation.set( - Math.PI / 2, 0, 0);
-	mesh2.scale.set( 0.1, 0.1, 0.1 );
-	mesh2.castShadow = true;
-	mesh2.receiveShadow = true;
-	arWorldRoot.add( mesh2 );
-	} )
-;
+
 	
+	loader.load( './kaseyScan.stl', function ( geometry ) {
+		                        loadedSTL = true;
+					mesh2 = new THREE.Mesh( geometry, material );
+					mesh2.position.set( 0, 0, 0 );
+					mesh2.rotation.set( - Math.PI / 2, 0, 0 );
+					mesh2.scale.set( 0.1, 0.1, 0.1 );
+					mesh2.castShadow = true;
+					mesh2.receiveShadow = true;
+					arWorldRoot.add( mesh2 );
+				} );
+	
+
 
 	//var geometry	= new THREE.TorusKnotGeometry(0.3,0.1,64,16);
 	//var material	= new THREE.MeshNormalMaterial(); 
