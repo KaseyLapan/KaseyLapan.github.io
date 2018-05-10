@@ -15,7 +15,7 @@
 </div><script>
 	//////////////////////////////////////////////////////////////////////////////////
 	//		Init
-	//////////////////////////////////////////////////////////////////////////////////
+	/////////////// THREE.Camera();///////////////////////////////////////////////////////////////////
 	// init renderer
 	var renderer	= new THREE.WebGLRenderer({
 		// antialias	: true,
@@ -37,7 +37,7 @@
 	//		Initialize a basic camera
 	//////////////////////////////////////////////////////////////////////////////////
 	// Create a camera
-	var camera = new THREE.Camera();
+	var camera = new
 	scene.add(camera);
 	////////////////////////////////////////////////////////////////////////////////
 	//          handle arToolkitSource
@@ -178,11 +178,11 @@
 	})
 	
 	onRenderFcts.push(function(){
-		if (sphere.position.x >= 1)balldirection = -1;
-		if (sphere.position.x <= 0)balldirection = 1;
+		if (sphere.position.y >= 1)balldirection = -1;
+		if (sphere.position.y <= 0)balldirection = 1;
 		console.log("bdx: "+balldirection);
                 console.log(sphere.position.x);
-		sphere.translateX(0.1*balldirection);
+		sphere.translateY(0.01*balldirection);
 	})
 	//////////////////////////////////////////////////////////////////////////////////
 	//		render the whole thing on the page
