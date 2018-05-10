@@ -179,11 +179,11 @@
 	})
 	
 	onRenderFcts.push(function(){
-		if (sphere.position.y >= 1)balldirection = -1;
-		if (sphere.position.y <= 0)balldirection = 1;
+		if (sphere.position.x >= 1)balldirection = -1;
+		if (sphere.position.x <= 0)balldirection = 1;
 		console.log("bdx: "+balldirection);
                 console.log(sphere.position.x);
-		sphere.translateY(0.01*balldirection);
+		sphere.translateX(0.01*balldirection);
 	})
 	//////////////////////////////////////////////////////////////////////////////////
 	//		render the whole thing on the page
