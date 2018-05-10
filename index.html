@@ -156,6 +156,9 @@
         var material = new THREE.MeshBasicMaterial( {map: texture} );
         var sphere = new THREE.Mesh( geometry, material );
         sphere.position.y =0.5;
+	console.log("X: "+sphere.position.x);
+	console.log("Y: "+sphere.position.y)
+	
 	sphere.scale.set(0.25,0.25,0.25);
         arWorldRoot.add( sphere );
 	
