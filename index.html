@@ -155,7 +155,8 @@
 	//texture.wrapS  = texture.wrapT = THREE.RepeatWrapping;
         var material = new THREE.MeshBasicMaterial( {map: texture} );
         var sphere = new THREE.Mesh( geometry, material );
-        sphere.position.y =0.5;
+        sphere.position.y =0.6;
+	 sphere.position.z =0.1;
 	console.log("X: "+sphere.position.x);
 	console.log("Y: "+sphere.position.y)
 	
