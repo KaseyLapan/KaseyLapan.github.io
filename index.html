@@ -116,7 +116,8 @@
 	//////////////////////////////////////////////////////////////////////////////////
 	//		add an object in the scene
 	//////////////////////////////////////////////////////////////////////////////////
-        var loader = new THREE.STLLoader();
+        var balldirection = 1;
+	var loader = new THREE.STLLoader();
 	var arWorldRoot = smoothedRoot
 	// add a torus knot	
 	var geometry	= new THREE.CubeGeometry(1,1,1);
@@ -171,6 +172,13 @@
 	
 	onRenderFcts.push(function(){
 		sphere.rotation.x += 0.1
+	})
+	
+	onRenderFcts.push(function(){
+		if (sphere.position.x == 1)balldirection = -1;
+		if (sphere.position.x == 0)balldirection = 1;
+
+		sphere.translateX += 0.1*balldirection
 	})
 	//////////////////////////////////////////////////////////////////////////////////
 	//		render the whole thing on the page
